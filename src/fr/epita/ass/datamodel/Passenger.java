@@ -1,10 +1,13 @@
 package fr.epita.ass.datamodel;
 
+/**
+ *  Java class named Passenger representing the characteristics of a titanic passenger.
+ */
 public class Passenger {
     private String name;
-    private PassengerClass passengerClass;
+    private PassengerClass passengerClass; // "1st", "2nd", & "3rd"
     private Double age;
-    private Sex sex;
+    private Sex sex; // "male", & "female"
     private Boolean survived;
 
     public Passenger(String name, PassengerClass passengerClass, Double age, Sex sex, Boolean survived) {
@@ -44,7 +47,6 @@ public class Passenger {
     public String toString() {
         return "Passenger [" +
                 "name=\"" + name + "\"" +
-                "pClass=" + passengerClass + " " +
                 ", survived=\"" + survived +
                 "\"]";
     }

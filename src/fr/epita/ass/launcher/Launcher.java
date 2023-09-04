@@ -5,6 +5,9 @@ import fr.epita.ass.test.*;
 import java.io.IOException;
 import java.text.ParseException;
 
+/**
+ * Entrypoint  of the program
+ */
 public class Launcher {
     public static void main(String[] args) throws IOException, ParseException {
 

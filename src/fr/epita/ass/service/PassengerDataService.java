@@ -9,7 +9,16 @@ import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
 
+/**
+ * PassengerDataService performing some statistics/data operations on passenger data
+ */
 public class PassengerDataService {
+    /**
+     *
+     * @param passengers list of passenger to filter
+     * @param survived value to filter the data from
+     * @return list of passengers who have survived
+     */
     public List<Passenger> filterSurvived(List<Passenger> passengers, Boolean survived){
         List<Passenger> ps = new ArrayList<>();
         for(Passenger p: passengers){
@@ -19,6 +28,11 @@ public class PassengerDataService {
         return ps;
     }
 
+    /**
+     *
+     * @param passengers list of passengers
+     * @return average age of the given passengers
+     */
     public int averageAge(List<Passenger> passengers){
         int avg = 0;
         for(Passenger p: passengers)
@@ -27,6 +41,11 @@ public class PassengerDataService {
         return avg / passengers.size();
     }
 
+    /**
+     *
+     * @param passengers
+     * @return a map of String as a key and a Double as a value
+     */
     public Map<String, Double> calculateAgeDistribution(List<Passenger> passengers){
         // Step 1: Create a map to store the age distribution
         Map<String, Double> ageDistribution = new HashMap<>();
@@ -47,6 +66,11 @@ public class PassengerDataService {
         return ageDistribution;
     }
 
+    /**
+     *
+     * @param passengers list of passenger
+     * @return a map for each pClass passenger type
+     */
     public Map<String, Double> calculatePClassDistribution2(List<Passenger> passengers){
         // total count
         int totalCount = passengers.size();
@@ -71,6 +95,11 @@ public class PassengerDataService {
         return pClassDistribution;
     }
 
+    /**
+     *
+     * @param passengers
+     * @param survived
+     */
     public void weightedMean(List<Passenger> passengers, Boolean survived){
         // get a list of passengers
         List<Passenger> pass = filterSurvived(passengers, survived);
@@ -93,7 +122,11 @@ public class PassengerDataService {
         return (totalCount > 0) ? (totalAgeSum / totalCount) : 0.0;
     }
 
-    // Helper method to get survived centroids
+    /**
+     *
+     * @param passengers
+     * @return
+     */
     public static Map<Integer, Passenger> getSurvivedCentroids(List<Passenger> passengers) {
         Map<Integer, Passenger> survivedCentroids = new HashMap<>();
 

@@ -1,5 +1,8 @@
 package fr.epita.ass.datamodel;
 
+/**
+ * Enum Sex having male and female as values
+ */
 public enum Sex {
     MALE("male"), FEMALE("female");
     private String gender;

@@ -10,17 +10,22 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
 
+/**
+ * TestBLI2 class calculate the passenger's distribution on the PClass characteristic
+ * calculate he weighted mean
+ *
+ */
 public class TestBLI2 {
-    public static void main(String[] args) throws IOException, ParseException {
-        test();
-    }
+//    public static void main(String[] args) throws IOException, ParseException {
+//        test();
+//    }
     public static void test() throws IOException, ParseException {
         PassengerDataService passengerDataService = new PassengerDataService();
 
         PassengerCSVDAO passengerCSVDAO = new PassengerCSVDAO();
         List<Passenger> lst = passengerCSVDAO.readAll();
-//        List<Passenger> filteredList = passengerDataService.filterSurvived(lst, true);
-//        Map<String, Double> ageDistribution = passengerDataService.calculatePClassDistribution2(filteredList);
+        List<Passenger> filteredList = passengerDataService.filterSurvived(lst, true);
+        Map<String, Double> ageDistribution = passengerDataService.calculatePClassDistribution2(filteredList);
 //
 //        System.out.print("{");
 //        for(Map.Entry<String, Double> entry: ageDistribution.entrySet()){
